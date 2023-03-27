@@ -1,0 +1,39 @@
+{
+  "cli": {
+    "version": ">= 3.7.2",
+    "promptToConfigurePushNotifications": false
+  },
+  "build": {
+    "development": {
+      "distribution": "internal",
+      "ios": {
+        "resourceClass": "m-medium",
+        "credentialsSource": "local"
+      },
+      "cache": {
+        "key": "1.0.0"
+      }
+    },
+    "development-simulator": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "ios": {
+        "simulator": true
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "ios": {
+        "resourceClass": "m1-medium"
+      }
+    },
+    "production": {
+      "ios": {
+        "resourceClass": "m1-medium"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Datadog app credentials
+echo $DD_CREDENTIALS | base64 --decode > ./config/credentials.json
+echo $DD_HOST | base64 --decode > ./config/hosts.json
+
+# App signing credentials
+echo $DD_APP_SIGNING | base64 --decode > ./credentials.json

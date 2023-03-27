@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "rum-expo-react-navigation",
+    "slug": "rum-expo-react-navigation",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "plugins": [
+      [
+        "expo-datadog",
+        {
+          "errorTracking": {
+            "iosDsyms": false,
+            "iosSourcemaps": false
+          }
+        }
+      ]
+    ],
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.datadog.rumexporeactnavigation"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.datadog.rumexporeactnavigation"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "244f09e5-f9bb-405f-b110-2069dc4e20e1"
+      }
+    }
+  }
+}

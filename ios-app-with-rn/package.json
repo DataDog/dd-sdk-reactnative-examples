@@ -1,0 +1,19 @@
+{
+  "name": "iOSHybridApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "yarn react-native start"
+  },
+  "dependencies": {
+    "@datadog/mobile-react-native": "^1.4.0",
+    "@datadog/mobile-react-navigation": "^1.4.0",
+    "@react-navigation/native": "^6.1.4",
+    "@react-navigation/native-stack": "^6.9.10",
+    "react": "18.2.0",
+    "react-native": "^0.71.2",
+    "react-native-performance-limiter": "^0.1.1",
+    "react-native-safe-area-context": "^4.5.0",
+    "react-native-screens": "^3.20.0"
+  }
+}

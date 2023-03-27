@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DatadogExample</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">Key</string>
+</resources>
