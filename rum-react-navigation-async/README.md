@@ -37,4 +37,12 @@ To try this project for yourself you need to create a folder called config in th
     }
     ```
 
-You'll therefore test how to initialize the SDK after the components of the main page have been initialized.
+Moreover since we added the datadog wizard to the app, you need to create a file called `datadog-ci.json` containing:
+
+```json
+{
+    "apiKey": "<DATADOG_API_KEY>"
+}
+```
+
+You can find the `<DATADOG_API_KEY>` in your datadog setting -> ACCESS -> API Keys
