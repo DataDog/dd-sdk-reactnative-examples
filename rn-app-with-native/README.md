@@ -18,11 +18,12 @@ yarn install
 
 Then create a `credentials.json` file at the root of the project with the following content:
 
-```
+```json
 {
   "applicationId": "<your-application-id>",
   "clientToken": "<your-client-token>",
   "environment": "<your-environment>"
 }
-
 ```
+
+You can find these credentials in Datadog.
