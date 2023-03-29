@@ -7,36 +7,32 @@ To propose improvements, feel free to submit a PR or open an Issue.
 
 ## Setup your developer Environment
 
-To get started with the project, run `yarn install` in the root directory to install the required dependencies for each package:
-
-```sh
-yarn install
-```
+To get started with the project, follow the installation instructions in each app.
 
 ### Project structure overview
 
-The sample application is for shopping furniture and retrieves its resources from [shopist](https://shopist.io)
+The sample application is for shopping furniture and retrieves its resources from [shopist](https://shopist.io) - except for the hybrid applications.
 
-It will contain four pages:
+It contains the following pages:
 
 1. Login Page
 
-    - You can use any username but for the password use '1234' for all projects except `codepush` that has a password of '12345'
+   - You can use any username but for the password use '1234' for all projects except `codepush` that has a password of '12345'
 
 2. Categories page
 
-    - On the top right, there's a button used to crash the app and test the wizard
-    - Click on a category to go the corresponding products
+   - On the top right, there's a button used to crash the app and test the wizard
+   - Click on a category to go the corresponding products
 
 3. Products page
 
-    - Choose the products you want to add to your list
-    - You can add each product only once
-    - You can add products from different categories
+   - Choose the products you want to add to your list
+   - You can add each product only once
+   - You can add products from different categories
 
 4. Cart's page
 
-    - You can find here the list of products you've created
+   - You can find here the list of products you've created
 
 You can use any username for the login page but for the password use '1234' for all projects except `codepush` that has a password of '12345'
 
@@ -65,7 +61,7 @@ with the details about what you'd like to see. At a minimum, please provide:
 - The goal of the new feature;
 - A description of how it might be used or behave;
 - Links to any important resources (e.g. Github repos, websites, screenshots,
-     specifications, diagrams).
+  specifications, diagrams).
 
 ## Found a bug?
 
@@ -112,13 +108,14 @@ To create a pull request:
 1. **Fork the repository** from <https://github.com/DataDog/dd-sdk-reactnative-examples> ;
 2. **Make any changes** for your patch;
 3. **Write tests** that demonstrate how the feature works or how the bug is fixed;
-4. **Update any documentation** such as `docs/GettingStarted.md`, especially for
-    new features;
+4. **Update any documentation** especially for
+   new features;
 5. **Submit the pull request** from your fork back to this
-    [repository](https://github.com/DataDog/dd-sdk-reactnative-examples) .
+   [repository](https://github.com/DataDog/dd-sdk-reactnative-examples) .
 
 The pull request will be run through our CI pipeline, and a project member will
-cccccbefgrfnuhtdbgblkfvvljrequests must:
+review the changes with you. At a minimum, to be accepted and merged, pull
+requests must:
 
 - Have a stated goal and detailed description of the changes made;
 - Include thorough test coverage and documentation, where applicable;
