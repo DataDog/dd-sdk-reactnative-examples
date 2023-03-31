@@ -1,7 +1,6 @@
 # Android app with React Native screens
 
-This app is a demo Android app that features some React Native screens.
-The application is instrumented with Datadog.
+This app is a demo Android app with React Native screens.
 
 See the [MyReactApplication.kt](./android/app/src/main/java/com/example/hybridapp/MyReactApplication.kt) file for the Android instrumentation.
 See the [index.android.js](./index.android.js) on how to instrument Datadog on the javascript side.
@@ -21,6 +20,8 @@ APPLICATION_ID="<your-application-id>"
 CLIENT_TOKEN="<your-client-token>"
 ENVIRONMENT="<env>"
 ```
+
+You can find these credentials in Datadog.
 
 ## Fixing build issues
 

@@ -1,12 +1,17 @@
 # Rum react navigation Codepush
 
-To use codepush, we need to have our app released, that's why we'll upload it to appcenter.
-
 ## Usage
 
-To try this project for yourself you need to create a folder called config in the project root containing 2 files:
+In this directory, install all dependencies:
 
-- `credentials.json` file containting
+```shell
+yarn install
+(cd ios && pod install)
+```
+
+To try this project for yourself you need to create a folder called `config` in the project root containing 2 files:
+
+- `config/credentials.json` file containting
 
     ```json
     {
@@ -21,9 +26,7 @@ To try this project for yourself you need to create a folder called config in th
 
     Follow the [following documentation](https://learn.microsoft.com/en-us/appcenter/distribution/uploading) to learn more on appcenter and how to get the codepush keys.
 
-    You can find these credentials in your Datadog application
-
-- `hosts.json` file containing
+- `config/hosts.json` file containing
 
     ```json
     {

@@ -1,29 +1,34 @@
 # Rum react navigation
 
-The sample app.
-
 Integrates the Datadog SDK with React Navigation.
 
 ## Usage
 
-To try this project for yourself you need to create a folder called config in the project root containing 2 files:
+In this directory, install all dependencies:
 
-- `credentials.json` file containting
+```shell
+yarn install
+(cd ios && pod install)
+```
 
-    ```json
-    {
-        "clientToken": "<CLIENT_TOKEN>",
-        "environment": "<ENVIRONMENT_NAME>",
-        "applicationId": "<RUM_APPLICATION_ID>"
-    }
-    ```
+To try this project for yourself you need to create a folder called `config` in the project root containing 2 files:
 
-     You can find these credentials in your Datadog application
+- `config/credentials.json` file containting
 
-- `hosts.json` file containing
+  ```json
+  {
+    "clientToken": "<CLIENT_TOKEN>",
+    "environment": "<ENVIRONMENT_NAME>",
+    "applicationId": "<RUM_APPLICATION_ID>"
+  }
+  ```
 
-    ```json
-    {
-        "shopistApiHost": "shopist.io"
-    }
-    ```
+  You can find these credentials in your Datadog application
+
+- `config/hosts.json` file containing
+
+  ```json
+  {
+    "shopistApiHost": "shopist.io"
+  }
+  ```

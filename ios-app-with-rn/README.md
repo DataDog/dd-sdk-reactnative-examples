@@ -1,7 +1,6 @@
 # iOS app with React Native screens
 
-This app is a demo iOS app that features some React Native screens.
-The application is instrumented with Datadog.
+This app is a demo iOS app with React Native screens.
 
 See the [AppDelegate.swift](./ios/Today/AppDelegate.swift) file for the iOS instrumentation.
 See the [index.js](./index.js) on how to instrument Datadog on the javascript side.
@@ -22,3 +21,5 @@ APPLICATION_ID = <your-application-id>
 CLIENT_TOKEN = <your-client-token>
 ENVIRONMENT = <env>
 ```
+
+You can find these credentials in Datadog.
