@@ -12,6 +12,7 @@
   "dependencies": {
     "@datadog/mobile-react-native": "^1.3.1",
     "@datadog/mobile-react-navigation": "^1.3.1",
+    "@notifee/react-native": "^7.7.1",
     "@react-navigation/native": "^6.1.3",
     "@react-navigation/native-stack": "^6.9.9",
     "datadog-react-native-wizard": "^0.1.0",
