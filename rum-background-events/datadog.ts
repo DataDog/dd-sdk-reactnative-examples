@@ -18,7 +18,8 @@ config.nativeCrashReportEnabled = true;
 // Optional: Select your Datadog website (one of "US", "EU" or "GOV")
 config.site = 'US';
 // Optional: Sample RUM sessions (in this example, 80% of session are sent to Datadog. Default is 100%)
-config.sessionSamplingRate = 80;
+config.sessionSamplingRate = 100;
+config.trackBackgroundEvents = true;
 
 export const onSDKInitialized = () => {
   DdSdkReactNative.setAttributes({
