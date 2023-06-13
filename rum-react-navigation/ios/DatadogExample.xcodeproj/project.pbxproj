@@ -369,7 +369,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n../node_modules/.bin/datadog-ci dsyms upload $DWARF_DSYM_FOLDER_PATH";
+			shellScript = "set -e\n../node_modules/.bin/datadog-ci dsyms upload $DWARF_DSYM_FOLDER_PATH\n";
 		};
 		BC0A64C549CB263E16C2009B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
