@@ -35,7 +35,7 @@ To try this project you need to create a `config` folder with the following file
 
 ### Locally
 
-We should note that the React Native SDK doesn't really run on Expo Go, so to have an honest build, you need to build the project using `expo-dev-client`. You can do that by running:
+The React Native SDK doesn't run on Expo Go, so to have an honest build, the project needs to be built using `expo-dev-client`. Do that by running:
 
 ```sh
 yarn expo run:android
