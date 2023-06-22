@@ -5,15 +5,23 @@
  * @format
  */
 
+import {
+  DatadogProvider,
+  DatadogProviderConfiguration,
+  DdRum,
+  RumActionType,
+} from '@datadog/mobile-react-native';
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+  HWEvent,
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
+  useTVEventHandler,
   View,
 } from 'react-native';
 
@@ -25,9 +33,20 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import {clientToken, environment, applicationId} from './credentials.json';
+
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
+
+const config = new DatadogProviderConfiguration(
+  clientToken,
+  environment,
+  applicationId,
+  true,
+  true,
+  true,
+);
 
 function Section({children, title}: SectionProps): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -62,37 +81,45 @@ function App(): JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  // Add actions for TV Events
+  const myTVEventHandler = (evt: HWEvent) => {
+    DdRum.addAction(RumActionType.CUSTOM, evt.eventType);
+  };
+  useTVEventHandler(myTVEventHandler);
+
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <DatadogProvider configuration={config}>
+      <SafeAreaView style={backgroundStyle}>
+        <StatusBar
+          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          backgroundColor={backgroundStyle.backgroundColor}
+        />
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={backgroundStyle}>
+          <Header />
+          <View
+            style={{
+              backgroundColor: isDarkMode ? Colors.black : Colors.white,
+            }}>
+            <Section title="Step One">
+              Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+              screen and then come back to see your edits.
+            </Section>
+            <Section title="See Your Changes">
+              <ReloadInstructions />
+            </Section>
+            <Section title="Debug">
+              <DebugInstructions />
+            </Section>
+            <Section title="Learn More">
+              Read the docs to discover what to do next:
+            </Section>
+            <LearnMoreLinks />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </DatadogProvider>
   );
 }
 
