@@ -1,5 +1,13 @@
 PODS:
   - boost (1.76.0)
+  - DatadogSDK (1.20.0)
+  - DatadogSDKCrashReporting (1.20.0):
+    - DatadogSDK (= 1.20.0)
+    - PLCrashReporter (~> 1.11.0)
+  - DatadogSDKReactNative (1.8.0-rc0):
+    - DatadogSDK (~> 1.20.0)
+    - DatadogSDKCrashReporting (~> 1.20.0)
+    - React-Core
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.71.10-0rc0)
   - FBReactNativeSpec (0.71.10-0rc0):
@@ -15,6 +23,7 @@ PODS:
     - hermes-engine/Pre-built (= 0.71.10-0rc0)
   - hermes-engine/Pre-built (0.71.10-0rc0)
   - libevent (2.1.12.1)
+  - PLCrashReporter (1.11.1)
   - RCT-Folly (2021.07.22.00):
     - boost
     - DoubleConversion
@@ -335,6 +344,7 @@ PODS:
 
 DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
+  - "DatadogSDKReactNative (from `../node_modules/@datadog/mobile-react-native`)"
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
@@ -374,10 +384,16 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/react-native-tvos/react-native-tvos-podspecs.git:
     - libevent
+  trunk:
+    - DatadogSDK
+    - DatadogSDKCrashReporting
+    - PLCrashReporter
 
 EXTERNAL SOURCES:
   boost:
     :podspec: "../node_modules/react-native/third-party-podspecs/boost.podspec"
+  DatadogSDKReactNative:
+    :path: "../node_modules/@datadog/mobile-react-native"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   FBLazyVector:
@@ -447,6 +463,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: 0ed1b9a58a27b2f7885dc9f279bc3b341f44512b
+  DatadogSDK: a89bfe6b833c5f4069c36a5a1096947ff148e89a
+  DatadogSDKCrashReporting: 9f8ea80a58a68d165568e74a5b9d3d04bcff9563
+  DatadogSDKReactNative: 6edcfec28c6492996fa6c1dae8ec1a4ae25cb0db
   DoubleConversion: 234abba95e31cc2aada0cf3b97cdb11bc5b90575
   FBLazyVector: ee52154b154ddebb2ca3d455684970fdf799e570
   FBReactNativeSpec: c032bef214fe956a67278e33a0e1a7bb7e96996e
@@ -454,6 +473,7 @@ SPEC CHECKSUMS:
   glog: a2ded9bf28f0cb2fce90ad21eb419299a500ff6c
   hermes-engine: 09b621e96d637ab18b98f343c17b820b2a826b69
   libevent: a6d75fcd7be07cbc5070300ea8dbc8d55dfab88e
+  PLCrashReporter: 5d2d3967afe0efad61b3048d617e2199a5d1b787
   RCT-Folly: 136e9161a833a162fe3e8b647098759aae227036
   RCTRequired: 05ee353760eddb32ca383c0e28dee25632c76766
   RCTTypeSafety: 8206cd6416cf057070285b579b42e8be0b222072

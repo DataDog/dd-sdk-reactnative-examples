@@ -1186,6 +1186,11 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@datadog/mobile-react-native@^1.8.0-rc0":
+  version "1.8.0-rc0"
+  resolved "https://registry.yarnpkg.com/@datadog/mobile-react-native/-/mobile-react-native-1.8.0-rc0.tgz#081d1da68c1ee7d56e3f518eee92596830988eb6"
+  integrity sha512-dUIfmTd2aWWfnT3nkqs2OQ7W5dYOtLt0FSswXbZoe4UFFgxZChBdgF2RqL4yJUgw4K+0wrYSNynaOG11H8YSOw==
+
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz#a23514e8fb9af1269d5f7788aa556798d61c6b59"
