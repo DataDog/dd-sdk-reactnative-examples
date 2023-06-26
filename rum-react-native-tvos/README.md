@@ -3,7 +3,7 @@
 This app is a demo React Native app that runs on tvOS and AndroidTV.
 The application is instrumented with Datadog.
 
-See the [App.tsx](./App.tsx) on how to instrument Datadog on the javascript side.
+See the [App.tsx](./App.tsx) for information about how to instrument Datadog on the JavaScript side.
 
 ## Installation
 
