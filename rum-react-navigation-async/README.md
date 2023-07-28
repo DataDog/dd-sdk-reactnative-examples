@@ -43,7 +43,7 @@ To try this project you need to create a folder called `config` in the project r
     }
     ```
 
-Moreover, since we have added the [`datadog-react-native-wizard`][1] you need to add the datadog-ci.json file in the project root containing:
+Since we have added the [`datadog-react-native-wizard`][1], you need to add the `datadog-ci.json` file in the project root that includes the following:
 
 ```json
 {
@@ -51,7 +51,7 @@ Moreover, since we have added the [`datadog-react-native-wizard`][1] you need to
 }
 ```
 
-Note that the [Datadog API KEY][2] should be a valid one
+**Note**: The [Datadog API KEY][2] must be valid.
 
 [1]: https://docs.datadoghq.com/real_user_monitoring/error_tracking/reactnative/#alternatives-to-datadog-react-native-wizard
 [2]: https://docs.datadoghq.com/account_management/api-app-keys/#application-keys

@@ -35,7 +35,7 @@ To try this project you need to create a `config` folder with the following file
 
 ### Locally
 
-The React Native SDK doesn't run on Expo Go, so to have an honest build, the project needs to be built using `expo-dev-client`. Do that by running:
+The React Native SDK runs separately from Expo Go, which means the project should be built using `expo-dev-client`. Build the project locally by running the following:
 
 ```sh
 yarn expo run:android
@@ -51,7 +51,7 @@ yarn expo run:ios
 
 #### Signing the app
 
-To sign the app, refer to the [EAS documentation][1].
+Learn how to sign the app in the [EAS documentation][1].
 
 #### Releasing the build with EAS
 
