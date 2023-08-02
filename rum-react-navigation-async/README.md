@@ -14,7 +14,7 @@ yarn install
 
 To try this project you need to create a folder called `config` in the project root containing 2 files:
 
-- `config/credentials.json` file containting
+- `config/credentials.json` file containing:
 
     ```json
     {
@@ -25,7 +25,7 @@ To try this project you need to create a folder called `config` in the project r
     }
     ```
 
-    `<ApiLink>` is a hyperlink to a gist file you have created to store the Datadog initialization informations
+    `<ApiLink>` is a hyperlink to a gist file you have created to store the Datadog initialization information
     For example:
 
     ```json
@@ -35,7 +35,7 @@ To try this project you need to create a folder called `config` in the project r
     }
     ```
 
-- `config/hosts.json` file containing
+- `config/hosts.json` file containing:
 
     ```json
     {
@@ -43,7 +43,7 @@ To try this project you need to create a folder called `config` in the project r
     }
     ```
 
-Since we have added the [`datadog-react-native-wizard`][1], you need to add the `datadog-ci.json` file in the project root that includes the following:
+To upload sourcemaps for the app, add a `datadog-ci.json` file in the project root containing:
 
 ```json
 {
@@ -51,7 +51,7 @@ Since we have added the [`datadog-react-native-wizard`][1], you need to add the 
 }
 ```
 
-**Note**: The [Datadog API KEY][2] must be valid.
+**Note**: The [Datadog API key][2] must be valid.
 
 [1]: https://docs.datadoghq.com/real_user_monitoring/error_tracking/reactnative/#alternatives-to-datadog-react-native-wizard
 [2]: https://docs.datadoghq.com/account_management/api-app-keys/#application-keys
