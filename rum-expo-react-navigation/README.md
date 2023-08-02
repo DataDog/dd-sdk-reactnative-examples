@@ -33,11 +33,27 @@ To try this project you need to create a `config` folder with the following file
 
 ## To build the app
 
-### Signing the app
+### Locally
 
-To sign the app, refer to the [EAS documentation][1].
+The React Native SDK runs separately from Expo Go, which means the project must be built using `expo-dev-client`. Build the project locally by running the following:
 
-### Releasing the build with EAS
+```sh
+yarn expo run:android
+```
+
+or
+
+```sh
+yarn expo run:ios 
+```
+
+### On EAS
+
+#### Signing the app
+
+Learn how to sign the app in the [EAS documentation][1].
+
+#### Releasing the build with EAS
 
 Before building your application, you need to upload the gitignored files as secrets. To encrypt these files, run:
 
