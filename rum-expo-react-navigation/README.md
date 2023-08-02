@@ -35,7 +35,7 @@ To try this project you need to create a `config` folder with the following file
 
 ### Locally
 
-The React Native SDK runs separately from Expo Go, which means the project should be built using `expo-dev-client`. Build the project locally by running the following:
+The React Native SDK runs separately from Expo Go, which means the project must be built using `expo-dev-client`. Build the project locally by running the following:
 
 ```sh
 yarn expo run:android
