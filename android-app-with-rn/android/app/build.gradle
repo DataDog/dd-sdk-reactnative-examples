@@ -11,7 +11,7 @@ datadogProperties.load(new FileInputStream(datadogPropertiesFile))
 
 android {
     namespace 'com.example.hybridapp'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.hybridapp"
@@ -52,7 +52,10 @@ dependencies {
     implementation "com.facebook.react:react-android"
     implementation "com.facebook.react:hermes-android"
     // Version is set by the RN SDK
-    implementation "com.datadoghq:dd-sdk-android"
+    implementation "com.datadoghq:dd-sdk-android-rum"
+    implementation "com.datadoghq:dd-sdk-android-logs"
+    implementation "com.datadoghq:dd-sdk-android-trace"
+    implementation "com.datadoghq:dd-sdk-android-webview"
     implementation "org.webkit:android-jsc:+"
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -63,6 +66,15 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    constraints {
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
+            because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
+        }
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0") {
+            because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
+        }
+    }
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
