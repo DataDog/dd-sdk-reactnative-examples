@@ -3,7 +3,8 @@
  */
 
 import UIKit
-import Datadog
+import DatadogCore
+import DatadogRUM
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,22 +30,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    Datadog.initialize(
-      appContext: .init(),
-      trackingConsent: .granted,
-      configuration: Datadog.Configuration
-          .builderUsing(
-              rumApplicationID: applicationId,
-              clientToken: clientToken,
-              environment: environment
-          )
-          .set(endpoint: .us1)
-          .trackUIKitRUMViews(using: RNHybridPredicate())
-          .trackUIKitRUMActions()
-          .trackURLSession()
-          .build()
+    let configuration = Datadog.Configuration(
+        clientToken: clientToken,
+        env: environment,
+        site: .us1
     )
-    Global.rum = RUMMonitor.initialize()
+    Datadog.initialize(with: configuration, trackingConsent: .granted)
+      
+    let rumConfiguration = RUM.Configuration(
+        applicationID: applicationId,
+        uiKitViewsPredicate: RNHybridPredicate(),
+        uiKitActionsPredicate: DefaultUIKitRUMActionsPredicate(),
+        urlSessionTracking: RUM.Configuration.URLSessionTracking()
+    )
+    RUM.enable(with: rumConfiguration)
     Datadog.verbosityLevel = .debug
     // Override point for customization after application launch.
     UINavigationBar.appearance().tintColor = .todayPrimaryTint
