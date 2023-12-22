@@ -4,13 +4,11 @@ import android.app.Application
 import android.util.Log
 import androidx.fragment.app.Fragment
 import com.datadog.android.Datadog
-import com.datadog.android.DatadogSite
 import com.datadog.android.core.configuration.Configuration
-import com.datadog.android.core.configuration.Credentials
 import com.datadog.android.event.EventMapper
 import com.datadog.android.privacy.TrackingConsent
-import com.datadog.android.rum.GlobalRum
-import com.datadog.android.rum.RumMonitor
+import com.datadog.android.rum.Rum
+import com.datadog.android.rum.RumConfiguration
 import com.datadog.android.rum.model.ActionEvent
 import com.datadog.android.rum.tracking.ComponentPredicate
 import com.datadog.android.rum.tracking.FragmentViewTrackingStrategy
@@ -25,22 +23,20 @@ class MyReactApplication : Application(), ReactApplication {
         super.onCreate()
 
         val configuration = Configuration.Builder(
-            logsEnabled = true,
-            tracesEnabled = true,
-            crashReportsEnabled = true,
-            rumEnabled = true
-        )
-            .useSite(DatadogSite.US1)
-            .trackInteractions()
-            .useViewTrackingStrategy(FragmentViewTrackingStrategy(true, RNComponentPredicate()))
-            .setRumActionEventMapper(RNActionEventMapper())
-            .build()
-        val credentials = Credentials(BuildConfig.CLIENT_TOKEN, "prod", BuildConfig.ENVIRONMENT, BuildConfig.DD_APPLICATION_ID)
-        Datadog.initialize(this, credentials, configuration, TrackingConsent.GRANTED)
+            clientToken = BuildConfig.CLIENT_TOKEN,
+            env = BuildConfig.ENVIRONMENT,
+        ).build()
         Datadog.setVerbosity(Log.VERBOSE)
+        Datadog.initialize(this, configuration, TrackingConsent.GRANTED)
 
-        val monitor = RumMonitor.Builder().build()
-        GlobalRum.registerIfAbsent(monitor)
+        val rumConfiguration = RumConfiguration.Builder(
+            applicationId = BuildConfig.DD_APPLICATION_ID
+        )
+            .trackUserInteractions()
+            .useViewTrackingStrategy(FragmentViewTrackingStrategy(true, RNComponentPredicate()))
+            .setActionEventMapper(RNActionEventMapper())
+            .build()
+        Rum.enable(rumConfiguration)
 
         SoLoader.init(this, false)
     }

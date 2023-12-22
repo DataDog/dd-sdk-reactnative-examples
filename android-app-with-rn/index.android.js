@@ -32,6 +32,7 @@ const RNApp = () => {
       env: "fake_value",
       applicationId: "fake_value",
       longTaskThresholdMs: 100,
+      verbosity: SdkVerbosity.DEBUG,
     });
 
     BackHandler.addEventListener("hardwareBackPress", () => {

@@ -11,12 +11,12 @@ datadogProperties.load(new FileInputStream(datadogPropertiesFile))
 
 android {
     namespace 'com.example.hybridapp'
-    compileSdk 32
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.hybridapp"
         minSdk 21
-        targetSdk 32
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -33,11 +33,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
     buildFeatures {
         viewBinding true
@@ -52,7 +52,10 @@ dependencies {
     implementation "com.facebook.react:react-android"
     implementation "com.facebook.react:hermes-android"
     // Version is set by the RN SDK
-    implementation "com.datadoghq:dd-sdk-android"
+    implementation "com.datadoghq:dd-sdk-android-rum"
+    implementation "com.datadoghq:dd-sdk-android-logs"
+    implementation "com.datadoghq:dd-sdk-android-trace"
+    implementation "com.datadoghq:dd-sdk-android-webview"
     implementation "org.webkit:android-jsc:+"
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
