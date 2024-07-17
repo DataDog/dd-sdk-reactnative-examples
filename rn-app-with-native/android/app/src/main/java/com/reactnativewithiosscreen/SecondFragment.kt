@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.datadog.android.rum.GlobalRum
+import com.datadog.android.rum.GlobalRumMonitor
 
 class SecondFragment : Fragment(R.layout.fragment_second) {
 
@@ -20,12 +20,12 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
 
     override fun onResume() {
         super.onResume()
-        GlobalRum.get().startView("second_fragment", "Second Fragment", mapOf())
+        GlobalRumMonitor.get().startView("second_fragment", "Second Fragment", mapOf())
     }
 
     override fun onPause() {
         super.onPause()
-        GlobalRum.get().stopView("second_fragment", mapOf())
+        GlobalRumMonitor.get().stopView("second_fragment", mapOf())
     }
 
     private fun onCloseButtonPress() {

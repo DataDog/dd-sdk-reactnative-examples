@@ -43,7 +43,7 @@ target 'ReactNativeWithIOSScreen' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  pod 'DatadogSDKObjc', '~> 1.15.0'
+  pod 'DatadogSDKObjc', '~> 2.13.0'
 
   target 'ReactNativeWithIOSScreenTests' do
     inherit! :complete
@@ -58,5 +58,25 @@ target 'ReactNativeWithIOSScreen' do
       :mac_catalyst_enabled => false
     )
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
+
+    installer.pods_project.targets.each do |target|
+      # Workaround for https://github.com/facebook/react-native/issues/43335
+      # This avoids having to disable Flipper
+      if target.name == 'Flipper'
+        file_path = 'Pods/Flipper/xplat/Flipper/FlipperTransportTypes.h'
+        contents = File.read(file_path)
+        unless contents.include?('#include <functional>')
+          File.open(file_path, 'w') do |file|
+            file.puts('#include <functional>')
+            file.puts(contents)
+          end
+        end
+      end
+
+      target.build_configurations.each do |config|
+       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+       config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)', '_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION']
+      end
+    end
   end
 end

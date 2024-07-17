@@ -35,6 +35,12 @@ export const CompletionDetails = ({navigation}) => {
         }}
         title="Native long task"
       />
+      <Button
+        onPress={() => {
+          throw Error("Throw JS ERROR");
+        }}
+        title="Throw JS Error"
+      />
     </View>
   );
 };

@@ -165,7 +165,11 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
 
     // The version is set by @datadog/mobile-react-native
-    implementation "com.datadoghq:dd-sdk-android"
+    implementation "com.datadoghq:dd-sdk-android-rum:2.11.0"
+    implementation "com.datadoghq:dd-sdk-android-logs:2.11.0"
+    implementation "com.datadoghq:dd-sdk-android-trace:2.11.0"
+    implementation "com.datadoghq:dd-sdk-android-webview:2.11.0"
+    implementation "com.datadoghq:dd-sdk-android-okhttp:2.11.0"
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")

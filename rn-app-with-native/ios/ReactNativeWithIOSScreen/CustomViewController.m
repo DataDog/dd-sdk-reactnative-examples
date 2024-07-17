@@ -18,15 +18,13 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-
-    [DDGlobal.rum startViewWithViewController:self name:nil attributes:nil];
+  [super viewDidAppear:animated];
+  [[DDRUMMonitor shared] startViewWithViewController:self name:nil attributes:@{}];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-
-    [DDGlobal.rum stopViewWithViewController:self attributes:nil];
+  [super viewDidDisappear:animated];
+  [[DDRUMMonitor shared] stopViewWithViewController:self attributes:@{}];
 }
 
 @end

@@ -1,16 +1,37 @@
 PODS:
   - boost (1.76.0)
   - CocoaAsyncSocket (7.6.5)
-  - DatadogSDK (1.15.0)
-  - DatadogSDKCrashReporting (1.15.0):
-    - DatadogSDK (= 1.15.0)
-    - PLCrashReporter (~> 1.11.0)
-  - DatadogSDKObjc (1.15.0):
-    - DatadogSDK (= 1.15.0)
-  - DatadogSDKReactNative (1.4.0):
-    - DatadogSDK (~> 1.15.0)
-    - DatadogSDKCrashReporting (~> 1.15.0)
+  - DatadogCore (2.13.0):
+    - DatadogInternal (= 2.13.0)
+  - DatadogCrashReporting (2.13.0):
+    - DatadogInternal (= 2.13.0)
+    - PLCrashReporter (~> 1.11.2)
+  - DatadogInternal (2.13.0)
+  - DatadogLogs (2.13.0):
+    - DatadogInternal (= 2.13.0)
+  - DatadogRUM (2.13.0):
+    - DatadogInternal (= 2.13.0)
+  - DatadogSDKObjc (2.13.0):
+    - DatadogCore (= 2.13.0)
+    - DatadogLogs (= 2.13.0)
+    - DatadogRUM (= 2.13.0)
+    - DatadogSessionReplay (= 2.13.0)
+    - DatadogTrace (= 2.13.0)
+  - DatadogSDKReactNative (2.4.1):
+    - DatadogCore (~> 2.13.0)
+    - DatadogCrashReporting (~> 2.13.0)
+    - DatadogLogs (~> 2.13.0)
+    - DatadogRUM (~> 2.13.0)
+    - DatadogTrace (~> 2.13.0)
+    - DatadogWebViewTracking (~> 2.13.0)
     - React-Core
+  - DatadogSessionReplay (2.13.0):
+    - DatadogInternal (= 2.13.0)
+  - DatadogTrace (2.13.0):
+    - DatadogInternal (= 2.13.0)
+    - OpenTelemetrySwiftApi (= 1.6.0)
+  - DatadogWebViewTracking (2.13.0):
+    - DatadogInternal (= 2.13.0)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.71.3)
   - FBReactNativeSpec (0.71.3):
@@ -88,7 +109,8 @@ PODS:
   - hermes-engine/Pre-built (0.71.3)
   - libevent (2.1.12)
   - OpenSSL-Universal (1.1.1100)
-  - PLCrashReporter (1.11.0)
+  - OpenTelemetrySwiftApi (1.6.0)
+  - PLCrashReporter (1.11.2)
   - RCT-Folly (2021.07.22.00):
     - boost
     - DoubleConversion
@@ -435,14 +457,14 @@ PODS:
   - RNScreens (3.20.0):
     - React-Core
     - React-RCTImage
-  - SocketRocket (0.6.0)
+  - SocketRocket (0.6.1)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
 
 DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
-  - DatadogSDKObjc (~> 1.15.0)
+  - DatadogSDKObjc (~> 2.13.0)
   - "DatadogSDKReactNative (from `../node_modules/@datadog/mobile-react-native`)"
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
@@ -509,9 +531,15 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - CocoaAsyncSocket
-    - DatadogSDK
-    - DatadogSDKCrashReporting
+    - DatadogCore
+    - DatadogCrashReporting
+    - DatadogInternal
+    - DatadogLogs
+    - DatadogRUM
     - DatadogSDKObjc
+    - DatadogSessionReplay
+    - DatadogTrace
+    - DatadogWebViewTracking
     - Flipper
     - Flipper-Boost-iOSX
     - Flipper-DoubleConversion
@@ -524,6 +552,7 @@ SPEC REPOS:
     - fmt
     - libevent
     - OpenSSL-Universal
+    - OpenTelemetrySwiftApi
     - PLCrashReporter
     - SocketRocket
     - YogaKit
@@ -609,10 +638,16 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost: 57d2868c099736d80fcd648bf211b4431e51a558
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
-  DatadogSDK: d7e3ef65693db38842f85885c01ba0865e10a782
-  DatadogSDKCrashReporting: 4be11b3693ed048f461391f724788ea96d31633a
-  DatadogSDKObjc: e7e9ae85f2f15a37e9d404ae85726b1eda3a2f30
-  DatadogSDKReactNative: 6d1426209f448acbf58c13673b963a8b25cf00f5
+  DatadogCore: 9390fd07a89f57a23983de66fbec5bf3c2034f7a
+  DatadogCrashReporting: 79b67b790df186524fc76d45c0b8ce751c36ef41
+  DatadogInternal: 61ab12516d2faad79e35973534c29a72b0d44382
+  DatadogLogs: 912d7b3fd3d75df856de060082b785f92f7cefe6
+  DatadogRUM: b5629479d4553d80f2a57ef9db44ce37e56f8b97
+  DatadogSDKObjc: e644312016ed4914088b3fcfc1465507b276c2d1
+  DatadogSDKReactNative: 0101462ddda14f13470dfe05cca244c190bb1fac
+  DatadogSessionReplay: 2e7795c1a8a86ff989ed5c0ccd616eed0f6c9a3a
+  DatadogTrace: 1f40893de00c9a9b87be46fa7016fa0d50c4e66b
+  DatadogWebViewTracking: d1e2e755bb2ed7c18208471b9cbcfc7cb920aa45
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   FBLazyVector: 60195509584153283780abdac5569feffb8f08cc
   FBReactNativeSpec: 9c191fb58d06dc05ab5559a5505fc32139e9e4a2
@@ -630,7 +665,8 @@ SPEC CHECKSUMS:
   hermes-engine: 38bfe887e456b33b697187570a08de33969f5db7
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
-  PLCrashReporter: 7a9dff14a23ba5d2e28c6160f0bb6fada5e71a8d
+  OpenTelemetrySwiftApi: 657da8071c2908caecce11548e006f779924ff9c
+  PLCrashReporter: 499c53b0104f95c302d94fd723ebb03c56d9bac8
   RCT-Folly: 424b8c9a7a0b9ab2886ffe9c3b041ef628fd4fb1
   RCTRequired: bec48f07daf7bcdc2655a0cde84e07d24d2a9e2a
   RCTTypeSafety: 171394eebacf71e1cfad79dbfae7ee8fc16ca80a
@@ -661,10 +697,10 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 7bf0dafc7b727d93c8cb94eb00a9d3753c446c3e
   ReactCommon: 6f65ea5b7d84deb9e386f670dd11ce499ded7b40
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
-  SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
+  SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 5ed1699acbba8863755998a4245daa200ff3817b
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: c4e6a155e5b5401655aa91bd0d4205b06822961d
+PODFILE CHECKSUM: ab112b00987953709ab0615fb336e43d6d586bae
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.15.2
