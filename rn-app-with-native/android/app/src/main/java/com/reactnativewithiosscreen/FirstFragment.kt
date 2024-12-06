@@ -5,21 +5,27 @@ import android.view.View
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.datadog.android.DatadogInterceptor
-import com.datadog.android.rum.GlobalRum
+import com.datadog.android.okhttp.DatadogInterceptor
+import com.datadog.android.rum.GlobalRumMonitor
+import com.datadog.android.trace.TracingHeaderType
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.IOException
 
 class FirstFragment : Fragment(R.layout.fragment_first) {
+    private val tracedHostsWithHeaderType = mapOf(
+        "example.com" to setOf(TracingHeaderType.DATADOG, TracingHeaderType.TRACECONTEXT),
+        "example.eu" to setOf(TracingHeaderType.DATADOG, TracingHeaderType.TRACECONTEXT)
+    )
+
     private val client = OkHttpClient.Builder()
-        .addInterceptor(DatadogInterceptor())
+        .addInterceptor(DatadogInterceptor.Builder(tracedHostsWithHeaderType).build())
         .build()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val firstButton: Button = view.findViewById<Button>(R.id.button_first)
+        val firstButton: Button = view.findViewById(R.id.button_first)
 
         firstButton.setOnClickListener {
             this.onButtonPress()
@@ -28,12 +34,12 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
 
     override fun onResume() {
         super.onResume()
-        GlobalRum.get().startView("first_fragment", "First Fragment", mapOf())
+        GlobalRumMonitor.get().startView("first_fragment", "First Fragment", mapOf())
     }
 
     override fun onPause() {
         super.onPause()
-        GlobalRum.get().stopView("first_fragment", mapOf())
+        GlobalRumMonitor.get().stopView("first_fragment", mapOf())
     }
 
     private fun onButtonPress() {
@@ -52,8 +58,6 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
                 println(response.body!!.string())
             }
         }.start()
-
-
 
         findNavController().navigate(R.id.SecondFragment)
     }
