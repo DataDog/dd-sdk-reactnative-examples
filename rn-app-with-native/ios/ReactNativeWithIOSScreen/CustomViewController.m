@@ -19,14 +19,16 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
-    [DDGlobal.rum startViewWithViewController:self name:nil attributes:nil];
+    
+    
+  
+  [DDRUMMonitor.shared startViewWithViewController:self name:nil attributes:[[NSDictionary alloc] init]];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
 
-    [DDGlobal.rum stopViewWithViewController:self attributes:nil];
+    [DDRUMMonitor.shared stopViewWithViewController:self attributes:[[NSDictionary alloc] init]];
 }
 
 @end
