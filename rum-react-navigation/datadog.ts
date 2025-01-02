@@ -1,6 +1,7 @@
 import {
   DdSdkReactNative,
   DatadogProviderConfiguration,
+  SdkVerbosity,
 } from '@datadog/mobile-react-native';
 
 const credentials = require('./config/credentials.json');
@@ -19,6 +20,7 @@ config.nativeCrashReportEnabled = true;
 config.site = 'US';
 // Optional: Sample RUM sessions (in this example, 80% of session are sent to Datadog. Default is 100%)
 config.sessionSamplingRate = 80;
+config.verbosity = SdkVerbosity.DEBUG;
 
 export const onSDKInitialized = () => {
   DdSdkReactNative.setAttributes({
