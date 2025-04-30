@@ -45,6 +45,34 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - DatadogSDKReactNativeSessionReplay (2.7.0):
+    - DatadogSDKReactNative
+    - DatadogSessionReplay (~> 2.25.0)
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.11.18.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-hermes
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
+  - DatadogSessionReplay (2.25.0):
+    - DatadogInternal (= 2.25.0)
   - DatadogTrace (2.25.0):
     - DatadogInternal (= 2.25.0)
     - OpenTelemetrySwiftApi (= 1.13.1)
@@ -1863,6 +1891,7 @@ DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
   - DatadogObjc (= 2.25.0)
   - "DatadogSDKReactNative (from `../node_modules/@datadog/mobile-react-native`)"
+  - "DatadogSDKReactNativeSessionReplay (from `../node_modules/@datadog/mobile-react-native-session-replay`)"
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - fast_float (from `../node_modules/react-native/third-party-podspecs/fast_float.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
@@ -1946,6 +1975,7 @@ SPEC REPOS:
     - DatadogLogs
     - DatadogObjc
     - DatadogRUM
+    - DatadogSessionReplay
     - DatadogTrace
     - DatadogWebViewTracking
     - OpenTelemetrySwiftApi
@@ -1957,6 +1987,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/boost.podspec"
   DatadogSDKReactNative:
     :path: "../node_modules/@datadog/mobile-react-native"
+  DatadogSDKReactNativeSessionReplay:
+    :path: "../node_modules/@datadog/mobile-react-native-session-replay"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   fast_float:
@@ -2112,6 +2144,8 @@ SPEC CHECKSUMS:
   DatadogObjc: 95ba627bfb5debe3191d2f40a1aaa6b6db9919fc
   DatadogRUM: ff0661b42124d90c9ff2538c3cc1b806ddf7620c
   DatadogSDKReactNative: ab9e7d78e4efb307d33d90442d73dc637076a7d7
+  DatadogSDKReactNativeSessionReplay: 478840bd733a69dcdad65f152840425f4f86967b
+  DatadogSessionReplay: 857b566583a7866869d944eb9929dd655fbd8b01
   DatadogTrace: 4e1aac322eafd8568fd4a966b02e58fbb5af0612
   DatadogWebViewTracking: 3b2465b5a5bf10f187807e490678a2e0a3c2daae
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb

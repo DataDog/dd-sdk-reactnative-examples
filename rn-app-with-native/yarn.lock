@@ -1572,6 +1572,11 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@datadog/mobile-react-native-session-replay@2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@datadog/mobile-react-native-session-replay/-/mobile-react-native-session-replay-2.7.0.tgz#242212f7124679da52e65d0e05cba7bbabfa68dd"
+  integrity sha512-+yyGGMuzkA6DCllMzseJj/BNVDkkz+JoIe8/fsLyZD/GRTyjLgxKy/QMoE+zleMhZEe9Er5lrczPjZH3PHx0lA==
+
 "@datadog/mobile-react-native@2.7.0":
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/@datadog/mobile-react-native/-/mobile-react-native-2.7.0.tgz#80c4202019b8e63c46d5bf1250f6b44484a44cf1"
