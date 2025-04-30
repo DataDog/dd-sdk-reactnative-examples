@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CustomViewController.h"
-#import "AppDelegate.h"
+#import "ReactNativeWithIOSScreen-Swift.h"
 @import DatadogObjc;
 
 @implementation CustomViewController
@@ -19,15 +19,11 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    
-  
-  [DDRUMMonitor.shared startViewWithViewController:self name:nil attributes:[[NSDictionary alloc] init]];
+    [DDRUMMonitor.shared startViewWithViewController:self name:nil attributes:[[NSDictionary alloc] init]];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-
     [DDRUMMonitor.shared stopViewWithViewController:self attributes:[[NSDictionary alloc] init]];
 }
 

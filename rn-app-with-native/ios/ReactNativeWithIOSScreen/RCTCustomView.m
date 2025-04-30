@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RCTCustomView.h"
-#import "AppDelegate.h"
+#import "ReactNativeWithIOSScreen-Swift.h"
 
 @implementation RCTCustomView
 
