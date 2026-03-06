@@ -162,7 +162,7 @@ dependencies {
     def nav_version = "2.3.5"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+    implementation("com.squareup.okhttp3:okhttp:5.3.2")
 
     // The versions must be aligned with @datadog/mobile-react-native gradle versions
     implementation "com.datadoghq:dd-sdk-android-rum:2.23.0"
