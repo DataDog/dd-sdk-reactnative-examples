@@ -166,7 +166,7 @@ dependencies {
 
     // The versions must be aligned with @datadog/mobile-react-native gradle versions
     implementation "com.datadoghq:dd-sdk-android-rum:2.23.0"
-    implementation "com.datadoghq:dd-sdk-android-okhttp:2.23.0"
+    implementation "com.datadoghq:dd-sdk-android-okhttp:3.9.0"
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
