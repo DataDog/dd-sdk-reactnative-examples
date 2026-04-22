@@ -159,15 +159,15 @@ dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    def nav_version = "2.3.5"
+    def nav_version = "2.9.7"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
     // The versions must be aligned with @datadog/mobile-react-native gradle versions
-    implementation "com.datadoghq:dd-sdk-android-rum:2.23.0"
-    implementation "com.datadoghq:dd-sdk-android-okhttp:2.23.0"
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
+    implementation "com.datadoghq:dd-sdk-android-rum:2.26.3"
+    implementation "com.datadoghq:dd-sdk-android-okhttp:2.26.3"
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0")
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
