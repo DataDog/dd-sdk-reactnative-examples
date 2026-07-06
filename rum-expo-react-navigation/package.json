@@ -37,5 +37,21 @@
     "babel-preset-expo": "~11.0.0",
     "react-native-codegen": "^0.70.6"
   },
-  "private": true
+  "private": true,
+  "resolutions": {
+    "axios": "^1.18.1",
+    "fast-xml-parser": "^4.5.7",
+    "protobufjs": "^7.6.5",
+    "basic-ftp": "^5.3.1",
+    "simple-git": "^3.36.0",
+    "form-data": "^3.0.5",
+    "minimatch": "^9.0.9",
+    "@xmldom/xmldom": ">=0.8.13",
+    "ws": "^8.21.0",
+    "shell-quote": "^1.8.4",
+    "picomatch": "^3.0.2",
+    "@grpc/grpc-js": "^1.10.12",
+    "lodash": "^4.18.1",
+    "cross-spawn": "^7.0.6"
+  }
 }
