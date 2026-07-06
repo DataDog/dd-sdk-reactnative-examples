@@ -39,5 +39,22 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "resolutions": {
+    "minimatch": "^3.1.5",
+    "@babel/traverse": "^7.29.7",
+    "flatted": "^3.4.2",
+    "fast-xml-parser": "^4.5.7",
+    "picomatch": "^2.3.2",
+    "ws": "^7.5.11",
+    "shell-quote": "^1.8.4",
+    "lodash": "^4.18.1",
+    "braces": "^3.0.3",
+    "cross-spawn": "^6.0.6",
+    "semver": "^5.7.2",
+    "js-yaml": "^3.14.2",
+    "brace-expansion": "^1.1.15",
+    "micromatch": "^4.0.8",
+    "nanoid": "^3.3.15"
   }
 }
