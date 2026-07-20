@@ -15,5 +15,22 @@
     "react-native-performance-limiter": "^0.1.1",
     "react-native-safe-area-context": "^4.5.0",
     "react-native-screens": "^3.20.0"
+  },
+  "resolutions": {
+    "fast-xml-parser": "^4.5.7",
+    "minimatch": "^3.1.5",
+    "shell-quote": "^1.8.4",
+    "@babel/traverse": "^7.29.7",
+    "ws": "^6.2.6",
+    "picomatch": "^2.3.2",
+    "js-yaml": "^3.14.2",
+    "braces": "^3.0.3",
+    "cross-spawn": "^6.0.6",
+    "semver": "^6.3.1",
+    "brace-expansion": "^1.1.16",
+    "micromatch": "^4.0.8",
+    "nanoid": "^3.3.16",
+    "@babel/runtime": "^7.29.7",
+    "@babel/helpers": "^7.29.7"
   }
 }
