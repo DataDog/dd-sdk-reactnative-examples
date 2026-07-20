@@ -39,5 +39,22 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "resolutions": {
+    "minimatch": "^3.1.5",
+    "shell-quote": "^1.8.4",
+    "lodash": "^4.18.1",
+    "@babel/traverse": "^7.29.7",
+    "fast-xml-parser": "^4.5.7",
+    "ws": "^7.5.13",
+    "flatted": "^3.4.2",
+    "picomatch": "^2.3.2",
+    "cross-spawn": "^7.0.6",
+    "js-yaml": "^3.14.2",
+    "braces": "^3.0.3",
+    "semver": "^5.7.2",
+    "@babel/plugin-transform-modules-systemjs": "^7.29.7",
+    "brace-expansion": "^1.1.16",
+    "micromatch": "^4.0.8"
   }
 }
