@@ -37,5 +37,12 @@
     "babel-preset-expo": "~11.0.0",
     "react-native-codegen": "^0.70.6"
   },
-  "private": true
+  "private": true,
+  "resolutions": {
+    "nanoid": "^3.3.18",
+    "@grpc/grpc-js": "^1.10.12",
+    "postcss": "^8.5.26",
+    "jws": "^4.0.1",
+    "braces": "^3.0.3"
+  }
 }
