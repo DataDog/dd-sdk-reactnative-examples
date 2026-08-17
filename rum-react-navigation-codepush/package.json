@@ -47,5 +47,15 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "resolutions": {
+    "vm2": "^3.11.6",
+    "fast-xml-parser": "^4.5.7",
+    "simple-git": "^3.36.0",
+    "shell-quote": "^1.10.0",
+    "brace-expansion": "^1.1.18",
+    "minimatch": "^3.1.5",
+    "lodash": "^4.18.1",
+    "@babel/traverse": "^7.29.8"
   }
 }
