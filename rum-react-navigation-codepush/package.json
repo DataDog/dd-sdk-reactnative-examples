@@ -47,5 +47,8 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "resolutions": {
+    "simple-git": "^3.36.0"
   }
 }
