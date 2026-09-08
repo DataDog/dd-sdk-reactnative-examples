@@ -47,5 +47,14 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "resolutions": {
+    "nanoid": "^3.3.18",
+    "flatted": "^3.4.4",
+    "picomatch": "^2.3.2",
+    "follow-redirects": "^1.16.0",
+    "@babel/plugin-transform-modules-systemjs": "^7.29.8",
+    "qs": "^6.15.3",
+    "yaml": "^1.10.3"
   }
 }
