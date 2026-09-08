@@ -37,5 +37,14 @@
     "babel-preset-expo": "~11.0.0",
     "react-native-codegen": "^0.70.6"
   },
-  "private": true
+  "private": true,
+  "resolutions": {
+    "axios": "^1.20.0",
+    "protobufjs": "^7.6.6",
+    "node-forge": "^1.4.0",
+    "fast-xml-parser": "^4.5.7",
+    "basic-ftp": "^5.3.1",
+    "simple-git": "^3.36.0",
+    "shell-quote": "^1.10.0"
+  }
 }
